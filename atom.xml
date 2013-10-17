@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
+  <link href="http://glamouracademy.github.io/"/>
+  <updated>2013-09-27T21:35:27-04:00</updated>
+  <id>http://glamouracademy.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yes And]]></title>
+    <link href="http://glamouracademy.github.io/blog/2013/09/27/yes-and/"/>
+    <updated>2013-09-27T16:28:00-04:00</updated>
+    <id>http://glamouracademy.github.io/blog/2013/09/27/yes-and</id>
+    <content type="html"><![CDATA[<p>The art of collaborating in creativity</p>
+
+<p>For anyone who has ever taken an improv class, you&rsquo;ll recognize this fundamental &ndash; &ldquo;Yes And…&rdquo;</p>
+
+<p>First, a disclaimer.  I am not an improv expert, student or even a hardcore fan of improv.  There is an improv school here in New York City called Magnet Theater that offers a free intro class.  A friend of mine is really into improv and I decided to take the class because I had never done improv before, wanted to know more about what my friend loves and also thought it would be a good opportunity for be to be uncomfortable.</p>
+
+<p>There were about 30 people at this class.  We were similar and different of course.  What was important was that we were all there…and soon we&rsquo;d learn that what was really important was not only that were we all there; but, we were all there TOGETHER.</p>
+
+<p>This is a good time to highlight that most people in this class were not super extroverted and there was even a few that were hyper shy.  So, the point here is that this class was participatory and there was a lot of trust and bravery by everyone from and to everyone else.</p>
+
+<p>Expressing yourself can be about different things.  It can be about ego. It can be about the best idea(s).  It can be about connecting.  And it can be about a combination of those things.</p>
+
+<p>What I&rsquo;ve noticed in &lsquo;less-than-ideal&rsquo; communication styles is what I call asynchronous statements.  Basically, people are talking at one another.  Sometimes communication happens; but, to me it&rsquo;s like ripostes (in fencing) and at best a parry (in swordplay) rather than a dance or creating music.  Asynchronous statements are people&rsquo;s ideas that may or may not be related to previous statements.  So then, why collaborate?</p>
+
+<p>I&rsquo;m explicitly asking again: Why collaborate?  Why do you collaborate?  Why do others collaborate?  What is the purpose of collaborating?</p>
+
+<p>What &ldquo;Yes And&rdquo; does so beautifully for improv is create a beliveable universe.  The idea being that the performers must always convince the audience about the world that the performers are creating.  Even if one performer is taking the improv to a place that the other performer does not like, given that both performers want the audience to be entertained, the other performer must accept the first performer&rsquo;s output in order to change the direction.</p>
+
+<p>For example, performer 1 introduces a cat into the improv.  Performer 2 cannot say &ldquo;there is no cat&rdquo; because the audience will be lost and further what is the purpose of declaring &ldquo;there is no cat&rdquo;?  Where does the improv go from there?  Performer 2 can however acknowledge the cat and make it leave &ndash; e.g. &ldquo;Oh! The cat is running away!&rdquo;  The two performers have created a believable universe and storyline.  The audience wonders: What happened to the cat?  Why did the cat run away? In other words, they are collaborated in creation, which is why &ldquo;Yes And&rdquo; is not only useful in improv.</p>
+
+<p>&ldquo;Yes And&rdquo; works well in creative collaborative situations because of the purpose of collaboration &ndash; which is to share ideas and perhaps get the &ldquo;best&rdquo; idea.</p>
+
+<p>&ldquo;Yes And&rdquo;:</p>
+
+<ol>
+<li>establishes an agreed upon beginning of the conversation, creates a baseline (e.g. you said this, I hear you, did you mean this)</li>
+<li>builds on an agreement by creating a direction (e.g. following the same idea or changing the idea)</li>
+<li>introduces a new idea where people are more likely to understand and contribute to because they have context</li>
+</ol>
+
+
+<p>Moreover, &ldquo;Yes And&rdquo; is what I believe to be the best method in collaboration (so far) because not only are people (e.g. participants, audience) getting the benefits of collaboration (as mentioned just above) but also because:</p>
+
+<ol>
+<li>it&rsquo;s feel good to be heard</li>
+<li>it brings people closer together because they are sharing the same space of building on the idea (rather than REbuilding the idea from the ground)</li>
+<li>people share their ideas more freely if they feel comfortable</li>
+</ol>
+
+
+<p>So far, I&rsquo;ve been introducing an idea that I care about but the reason why it&rsquo;s front and center is because I&rsquo;m in week 1 of a programing course.   More abstractly, I&rsquo;m in week 1 of learning something new and I&rsquo;m learning with other people who are also learning.  What&rsquo;s interesting is understanding how other people are thinking and furthering their way of thinking to the goal.  I&rsquo;m impressed with the &ldquo;collaboration&rdquo; between students and the appreciation of the shared knowledge and experience of collaborative learning.  Sure, sometimes, a student will be telling another how to think, or worse, what to do and it&rsquo;s totally understandable right?  There is the whole blind-leading-the-blind and also we all want our fellow students to get their code working and the fastest way to do that is by showing someone the way that we know.  But overall, what I see is a group of people who happen to be students, but by all means really indicating that they are life long learners by:</p>
+
+<p>  • understanding the way someone else is thinking<br>
+  • promoting someone else&rsquo;s solution<br>
+  • articulating her/his way of thinking to someone else so that s/he understands</p>
+
+<p>We have an opportunity to challenge ourselves, learn about ourselves, learn about something and be a positive influence on another person- with the pragmatic bonus of awesome ideas…let&rsquo;s do more &ldquo;Yes And&rdquo;!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hello world]]></title>
+    <link href="http://glamouracademy.github.io/blog/2013/09/25/hello-world/"/>
+    <updated>2013-09-25T11:21:00-04:00</updated>
+    <id>http://glamouracademy.github.io/blog/2013/09/25/hello-world</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
