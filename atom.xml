@@ -4,14 +4,24 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
   <link href="http://glamouracademy.github.io/"/>
-  <updated>2013-10-17T00:18:23-04:00</updated>
+  <updated>2013-10-17T00:23:56-04:00</updated>
   <id>http://glamouracademy.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Charlotte Chang]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Variable Scope: How I Learned to Stop Worrying and Love the Ruling Class]]></title>
+    <link href="http://glamouracademy.github.io/blog/2013/10/16/variable-scope-how-i-learned-to-stop-worrying-and-love-the-ruling-class/"/>
+    <updated>2013-10-16T23:58:00-04:00</updated>
+    <id>http://glamouracademy.github.io/blog/2013/10/16/variable-scope-how-i-learned-to-stop-worrying-and-love-the-ruling-class</id>
+    <content type="html"><![CDATA[<iframe src="https://docs.google.com/presentation/d/10uozglFTF_Exk8w8AWa1nHI3cLjWv1lcHIVKua7C8-g/embed?start=false&loop=false&delayms=5000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Yes And]]></title>
