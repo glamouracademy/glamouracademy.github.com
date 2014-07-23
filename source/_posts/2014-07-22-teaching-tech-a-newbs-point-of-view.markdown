@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Teaching Tech: a newb's point of view"
+title: "Teaching Tech: 5 tips from a newb's point of view"
 date: 2014-07-22 17:45
 comments: true
 categories: 
