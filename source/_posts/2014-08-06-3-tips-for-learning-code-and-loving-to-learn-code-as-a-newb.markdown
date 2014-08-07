@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "3 tips for learning code (and loving to learn code) as a newb"
+title: "Keep Calm and Code On"
 date: 2014-08-06 11:45
 comments: true
 categories: 
