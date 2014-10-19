@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Refactoring: my 5 steps to 90% less code - Sippin' on Syntactic Sugar</title>
+  <meta name="author" content="Charlotte Chang">
+
+  
+  <meta name="description" content="I recently had a lot of fun coding the hamming distance via exercism.io. Firstly, I want to caveat that I totally recognize that my approach to this &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://glamouracademy.github.io/blog/2014/10/17/refactoring-my-5-steps-to-90-percent-less-code">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Sippin' on Syntactic Sugar" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44980744-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Sippin' on Syntactic Sugar</a></h1>
+  
+    <h2>proudly made here on earth</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:glamouracademy.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Refactoring: My 5 Steps to 90% Less Code</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-17T15:24:00-04:00" pubdate data-updated="true">Oct 17<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently had a lot of fun coding the <a href="http://rosalind.info/problems/hamm/">hamming distance</a> via <a href="http://exercism.io/getting-started">exercism.io</a>.  Firstly, I want to caveat that I totally recognize that my approach to this problem is done in a bubble.  That is, I don’t have business constraints, tech constraints, just newbie brain constraints.  ;p</p>
+
+<p>I got exercism.io up and running and after reading the <code>README.md</code>, ran the first test.*  The exercism.io exercises have tests written that need to pass, which is how you end up writing the program &ndash; yeah <a href=”http://en.wikipedia.org/wiki/Test-driven_development”>TDD</a>!</p>
+
+<p>Before I started coding I decided that my overall approach was going to be Kent Beck’s <a href=”http://c2.com/cgi/wiki?MakeItWorkMakeItRightMakeItFast”>Make it Work, Make it Right, Make it Fast</a>.  This meant I wasn’t going to worry about the next test or the previous test.  I just wanted to do the easiest thing working.</p>
+
+<h2> Step 1: Get it working! </h2>
+
+
+<p>The tests are 42 lines of code.  My first solution was <em>61 lines of code</em>.  And all the tests passed.  It was ugly but it worked, like using a fork to comb your hair* &ndash; it sort of hurts but it gets the job done.</p>
+
+<p><img class="left" src="/images/refactor1.png" width="350" height="350" title="image" alt="images"></p>
+
+<p>There were three areas of refactoring that I could think of:</p>
+
+<ul>
+<li>readability</li>
+<li>duplication</li>
+<li>nested conditionals</li>
+</ul>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+
+
+<h2> Step 2: Refactor for readability </h2>
+
+
+<p>The first thing that jumped out at me was how I was converting a string into an array. Basically I had an empty array for each string, splitting on each letter of the string and then each of those letters ended up into their respective array. Although it was explicit, it was also a bit taxing to read how it was being split, e.g. <code>.split(//)</code>. <code>.split(//)</code> is powerful as it allows strings to be split in a number of ways but I just needed a basic splitting by each character.)</p>
+
+<p><img class="right" src="/images/refactor2.png" width="350" height="350" title="image" alt="images"></p>
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<p>Then, I learned about the <code>.chars</code> method.</p>
+
+<p>OMG <code>.chars</code>!  (Yes it’s similar to my name but that’s not why I’m excited.)  <code>.chars</code> returns an array of characters for a string <a href=”http://ruby-doc.org/core-2.0/String.html#method-i-chars”>(Ruby docs)</a>. Basically <code>str.each_char.to_a</code>.  Or in my mind, delicious magic.</p>
+
+<p><img class="left" src="/images/refactor3.png" width="350" height="350" title="image" alt="images"></p>
+
+<p><em>Down to 43 lines of code</em>.</p>
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+
+
+<h3> Step 3: Refactor explicit duplication </h3>
+
+
+<p>The easiest thing I noticed next was that I declared the same variable 4 times.  That’s at least 3 times too many.</p>
+
+<p><img class="left" src="/images/refactor4.png" width="350" height="350" title="image" alt="images"></p>
+
+<p>Since all my conditionals are in the same method they can all access the variable.  So since Ruby reads code from top to bottom and since , I’ll extract it to the top of my method, outside of all the conditionals. (There’s also a pattern to extract variables in <a href=”http://refactoring.com/catalog/extractVariable.html“>The Refactoring Catalog</a>.)</p>
+
+<p><h8>Note:</h8> it’s at this stage that I realised there’s a bug within my code (lines 26 &amp; 33).  I’m submitting a pull request to add tests to exercism.io and for the purposes of this blog it should be fine.</p>
+
+<p><em>Alright, 38 lines!</em></p>
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+
+
+<h3> Step 4: Refactor simple functional duplication </h3>
+
+
+<p></p>
+
+<p>The two conditionals on lines 21 and 27 look very similar.  They both:</p>
+
+<ul>
+<li>check if one strand is longer than the other (lines 21, 27)</li>
+<li>trim off the extra letters of the longer strand so that it’s the same length as the shorter strand (lines 22, 28)</li>
+<li>creates an array for the new strand (lines 23, 29)</li>
+<li>creates a combined array of arrays that contains the paired elements from the two arrays (lines 24, 30)</li>
+<li>compares to see if the paired elements match and counts if they do not match (lines 25, 31)</li>
+</ul>
+
+
+<p><img class="right" src="/images/refactor5.png" width="350" height="350" title="image" alt="images"></p>
+
+<p>So really, if one strand is longer than the other, regardless if it’s the first strand passed or second, what we’re really saying is that the two strands don’t equal.</p>
+
+<p>I can use <code>.min</code> to determine the minimum length of the two strands and then I can trim both strands to that minimum length while zipping them into one array that contains arrays of paired elements from the two strands.</p>
+
+<p>Lastly, I can iterate through those paired elements and check if they are the same value.  I can then count the number of times they do not match, which is the Hamming Distance.</p>
+
+<p><img class="center" src="/images/refactor6.png" width="350" height="350" title="image" alt="images"></p>
+
+<p><em>31 lines!</em></p>
+
+<h3>Step 5: Refactor functional duplication</h3>
+
+
+<p><img class="left" src="/images/refactor7.png" width="350" height="350" title="image" alt="images"></p>
+
+<p>I wrote the conditional on line 5 more explicitly.  But I noticed that it’s doing the same function as the conditional on line 21.  (There’s the beauty of Ruby &ndash; many ways to do something!) However, at RailsConf this year I went to Sandi Metz’s talk <a href=”https://speakerdeck.com/skmetz/all-the-little-things-railsconf”>“All the Little Things”</a>. She mentions that nested conditionals are good candidates for refactoring.  And let’s be honest, while I do love that it’s very much step-by-step, it is a bit long and there’s mental overhead to remember where I am in the condition.</p>
+
+<p>(As a sidenote, this refactoring made me realize the potential tradeoff (especially as a newbie) between clarity and readability, specifically:</p>
+
+<ul>
+<li>laying out all the steps seems clear however it take mental effort to remember all the steps and where I am in those steps</li>
+<li>collapsing code makes the code more dense and that also takes effort to read.)</li>
+</ul>
+
+
+<p>It’s at this point that I suspect (ever so cautiously) that the conditional on line 21 might pass all my tests.  (For the record, this is like waiting in line for a roller coaster or trying out a new recipe and waiting for it to bake in the oven &ndash; you are really excited and hopeful but also a bit scared that it might just go all wrong.  And my imposter syndrome rears it’s head too.)</p>
+
+<p>So I move the magic conditional to the top of my method, remove it’s conditional-ness, and comment out all the rest of the code.  (#fearofcodecommitment)</p>
+
+<p><img class="left" src="/images/refactor8.png" width="350" height="350" title="image" alt="images"></p>
+
+<p>…and run my tests.</p>
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<p>…and listen to:</p>
+
+<iframe src="https://www.youtube.com/watch?v=_zBwRDEFMRY" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+<p>It worked!  I’m a wizard!  Actually I’m a paladin!  Someone high five me or fist bump me!</p>
+
+<p><img class="left" src="/images/refactor9.png" width="350" height="350" title="image" alt="images"></p>
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<p><em>7 lines of code!</em></p>
+
+<p><strong>5 steps. 90% less code.</strong></p>
+
+<p>You can nitpick me <a href=”http://exercism.io/submissions/b8f1be00cf8ec58d2dfd6679”>here</a>. (On line 4, I do think there’s one debatable improvement for readability and one less debatable improvement for removing duplication.)</p>
+
+<p>*Thanks to exercism.io for inadvertently teaching me about <code>skip</code> in MiniTest.</p>
+
+<p>*Yes I’m referencing Ariel in The Little Mermaid.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Charlotte Chang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-17T15:24:00-04:00" pubdate data-updated="true">Oct 17<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2014/10/17/refactoring-my-5-steps-to-90-percent-less-code/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2014/10/17/refactoring-my-5-steps-to-90-percent-less-code/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/06/3-tips-for-learning-code-and-loving-to-learn-code-as-a-newb/" title="Previous Post: Keep Calm and Code On">&laquo; Keep Calm and Code On</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/17/refactoring-my-5-steps-to-90-percent-less-code/">Refactoring: My 5 Steps to 90% Less Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/06/3-tips-for-learning-code-and-loving-to-learn-code-as-a-newb/">Keep Calm and Code On</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/22/teaching-tech-a-newbs-point-of-view/">Teaching Tech: 5 Tips From a Newb's Point of View</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/gem-dot-first/">gem.first</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/16/variable-scope-how-i-learned-to-stop-worrying-and-love-the-ruling-class/">Variable Scope: How I Learned to Stop Worrying and Love the Ruling Class</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/glamouracademy">@glamouracademy</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'glamouracademy',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<h2>twitter</h2>
+<a class="twitter-timeline" href="https://twitter.com/pushorpull" data-widget-id="391723584529244160">Tweets by @pushorpull</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+
+
+<a href="http://www.linkedin.com/pub/charlotte-chang/1/742/b65"><img src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Charlotte Chang's profile on LinkedIn">
+</a>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Charlotte Chang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
