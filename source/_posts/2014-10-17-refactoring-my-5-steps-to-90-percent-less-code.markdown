@@ -130,9 +130,13 @@ So I move the magic conditional to the top of my method, remove it’s condition
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 …and listen to: 
 
-<iframe src="https://www.youtube.com/watch?v=_zBwRDEFMRY" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+<iframe width="560" height="315" style="align:center" src="//www.youtube.com/embed/_zBwRDEFMRY" frameborder="0" allowfullscreen></iframe>
 
 It worked!  I’m a wizard!  Actually I’m a paladin!  Someone high five me or fist bump me!
 
