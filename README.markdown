@@ -8,10 +8,10 @@ create a new file via `rake new_post["title”]` in console
 in text editor, add content
 
 COMMIT 
-git add
-git commit
-git push origin source
+`git add`
+`git commit`
+`git push origin source`
 
 PUBLISH
-rake generate
-rake deploy
+`rake generate`
+`rake deploy`
