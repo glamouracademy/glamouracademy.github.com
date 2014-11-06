@@ -1,17 +1,22 @@
-How to create a post and deploy blog:
+View blog: <a href=http://glamouracademy.github.io/>Swimming in Syntactic Sugar</a>
 
-http://glamouracademy.github.io/
 =========================
 
-CREATE
-create a new file via `rake new_post["title”]` in console
-in text editor, add content
 
-COMMIT 
-git add
-git commit
-git push origin source
+How to create a post and deploy blog:
 
-PUBLISH
-rake generate
-rake deploy
+
+<strong>CREATE</strong>
+* create a new file via `rake new_post["title”]` in console
+* in text editor, add content
+
+
+<strong>COMMIT</strong>
+* `git add`
+* `git commit`
+* `git push origin source`
+
+
+<strong>PUBLISH</strong>
+* `rake generate`
+* `rake deploy`
