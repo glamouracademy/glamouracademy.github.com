@@ -4,7 +4,7 @@
   <title><![CDATA[Sippin' on Syntactic Sugar]]></title>
   <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
   <link href="http://glamouracademy.github.io/"/>
-  <updated>2014-10-19T15:53:20-04:00</updated>
+  <updated>2014-11-06T14:41:40-05:00</updated>
   <id>http://glamouracademy.github.io/</id>
   <author>
     <name><![CDATA[Charlotte Chang]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Ruby Date Class: a Brief Lesson Learned]]></title>
+    <link href="http://glamouracademy.github.io/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned/"/>
+    <updated>2014-10-31T17:20:00-04:00</updated>
+    <id>http://glamouracademy.github.io/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned</id>
+    <content type="html"><![CDATA[<h2><em>Why can I use the Ruby `Date` class without requiring date?</em></h2>
+
+
+<p>I was doing an <a href="http://exercism.io">exercism.io</a> exercise, Gigasecond, which required me to address my fear of <code>date</code> and <code>time</code>.  (You can see <a href="http://exercism.io/submissions/d056c2d12fb6363735f483ca">my submission here and nitpick</a> if you’d like.)</p>
+
+<p>I noticed that I could use <code>date</code> without actually requiring <code>date.</code></p>
+
+<p>I thought to myself, “hmmm, that seems awfully inefficient.  Why should I type <code>require 'date’</code> if I don’t need to?” So this caused an investigation into: Do I actually need to <code>require ‘date’</code>?</p>
+
+<p>My first stop was irb, where I noticed that I would get different results depending on whether or not required date and further if I required date after the fact, the result would change too.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>date = Date.new
+</span><span class='line'>=> #&lt;Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
+</span><span class='line'>
+</span><span class='line'>date.class
+</span><span class='line'>=> Date
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>require ‘Date’
+</span><span class='line'>new_date = Date.new
+</span><span class='line'>=> #&lt;Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
+</span><span class='line'>
+</span><span class='line'>new_date.class
+</span><span class='line'>=> Date
+</span><span class='line'>
+</span><span class='line'>date.class
+</span><span class='line'>=> uninitialized constant error/bug!</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Suspicious.</p>
+
+<p>I did the same exercise in <a href="www.repl.it">repl.it</a> and got an uninitialized constant error. I also did the same investigation for <code>Time</code> but there was no inconsistency in the results. So this led me to believe there was some versioning issue or perhaps there really is an bug in irb.</p>
+
+<p>I <a href="http://stackoverflow.com/questions/26639080/why-can-i-use-the-date-class-without-requiring-date">posted on StackOverflow</a> and got some good information.</p>
+
+<p>Basically, it’s <a href="https://github.com/rubygems/rubygems/pull/948">a Rubygems bug for Rubygems versions earlier than 2.4.0</a>!</p>
+
+<p>So, if you run <code>gem environment</code> in terminal you should see what version of ruby gems and ruby you’re running.</p>
+
+<p>Apparently there is an intention to include this Rubygems fix into Ruby 2.2.  So until then, you can <a href="https://rubygems.org/pages/download">update your version of Rubygems</a> by:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rubygems-update
+</span><span class='line'>$ update_rubygems</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and voila! When you try to create a Date object without requiring date you should now get a uninitialized constant error.</p>
+
+<p>Happy halloween.</p>
+
+<p><img src="http://thehydrant.files.wordpress.com/2012/09/h22.jpg?w=490"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Refactoring: my 5 steps to 90% less code]]></title>
