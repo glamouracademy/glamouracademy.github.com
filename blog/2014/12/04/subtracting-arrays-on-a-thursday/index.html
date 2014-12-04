@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>hello world - Sippin' on Syntactic Sugar</title>
+  <title>Subtracting Arrays on a Thursday - Sippin' on Syntactic Sugar</title>
   <meta name="author" content="Charlotte Chang">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Just a little Thursday afternoon note about subtracting arrays that was discovered doing the hamming test, which detects the number of differences &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://glamouracademy.github.io/blog/2013/09/25/hello-world">
+  <link rel="canonical" href="http://glamouracademy.github.io/blog/2014/12/04/subtracting-arrays-on-a-thursday">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Sippin' on Syntactic Sugar" type="application/atom+xml">
@@ -81,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello World</h1>
+      <h1 class="entry-title">Subtracting Arrays on a Thursday</h1>
     
     
       <p class="meta">
@@ -97,14 +96,40 @@
   
 
 
-<time datetime="2013-09-25T11:21:00-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+<time datetime="2014-12-04T16:02:00-05:00" pubdate data-updated="true">Dec 4<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>Just a little Thursday afternoon note about subtracting arrays that was discovered doing <a href="http://rosalind.info/problems/hamm/">the hamming test</a>, which detects the number of differences between two different DNA strands.</p>
+
+<p>Let’s say you had to two DNA strands:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>strand1 = [G,G,A,C,G]
+</span><span class='line'>strand2 = [G,G,T,C,G]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you subtracted <code>strand1</code> from <code>strand2</code>, you’d expect the difference to be <code>1</code>, right?  In fact, it is <code>1</code>.</p>
+
+<p>Let’s take another example of another two DNA strands:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>strand3 = [A,G,A]
+</span><span class='line'>strand4 = [A,G,G]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you subtracted <code>strand3</code> from <code>strand4</code>, you’d expect the difference to be <code>1</code>, right?  There is 1 letter different between the two strands.</p>
+
+<p>However what you get is <code>0</code>.</p>
+
+<p>It seems that the <code>-</code> operator checks for uniques rather than checking in place.</p>
+
+<p>Happy Thursday!</p>
 </div>
 
 
@@ -127,7 +152,7 @@
   
 
 
-<time datetime="2013-09-25T11:21:00-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+<time datetime="2014-12-04T16:02:00-05:00" pubdate data-updated="true">Dec 4<span>th</span>, 2014</time>
       
 
 
@@ -135,7 +160,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2013/09/25/hello-world/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2013/09/25/hello-world/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2014/12/04/subtracting-arrays-on-a-thursday/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2014/12/04/subtracting-arrays-on-a-thursday/" >Tweet</a>
   
   
   
@@ -144,8 +169,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned/" title="Previous Post: The Ruby Date Class: a Brief Lesson Learned">&laquo; The Ruby Date Class: a Brief Lesson Learned</a>
       
-        <a class="basic-alignment right" href="/blog/2013/09/27/yes-and/" title="Next Post: Yes And">Yes And &raquo;</a>
       
     </p>
   </footer>

@@ -9,7 +9,7 @@
   <meta name="author" content="Charlotte Chang">
 
   
-  <meta name="description" content="Why can I use the Ruby `Date` class without requiring date? I was doing an exercism.io exercise, Gigasecond, which required me to address my fear of &hellip;">
+  <meta name="description" content="Just a little Thursday afternoon note about subtracting arrays that was discovered doing the hamming test, which detects the number of differences &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,68 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/04/subtracting-arrays-on-a-thursday/">Subtracting Arrays on a Thursday</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-04T16:02:00-05:00" pubdate data-updated="true">Dec 4<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just a little Thursday afternoon note about subtracting arrays that was discovered doing <a href="http://rosalind.info/problems/hamm/">the hamming test</a>, which detects the number of differences between two different DNA strands.</p>
+
+<p>Let’s say you had to two DNA strands:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>strand1 = [G,G,A,C,G]
+</span><span class='line'>strand2 = [G,G,T,C,G]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you subtracted <code>strand1</code> from <code>strand2</code>, you’d expect the difference to be <code>1</code>, right?  In fact, it is <code>1</code>.</p>
+
+<p>Let’s take another example of another two DNA strands:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>strand3 = [A,G,A]
+</span><span class='line'>strand4 = [A,G,G]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you subtracted <code>strand3</code> from <code>strand4</code>, you’d expect the difference to be <code>1</code>, right?  There is 1 letter different between the two strands.</p>
+
+<p>However what you get is <code>0</code>.</p>
+
+<p>It seems that the <code>-</code> operator checks for uniques rather than checking in place.</p>
+
+<p>Happy Thursday!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -790,6 +852,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/12/04/subtracting-arrays-on-a-thursday/">Subtracting Arrays on a Thursday</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned/">The Ruby Date Class: A Brief Lesson Learned</a>
       </li>
     
@@ -803,10 +869,6 @@
     
       <li class="post">
         <a href="/blog/2014/07/22/teaching-tech-a-newbs-point-of-view/">Teaching Tech: 5 Tips From a Newb&#8217;s Point of View</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/04/gem-dot-first/">gem.first</a>
       </li>
     
   </ul>

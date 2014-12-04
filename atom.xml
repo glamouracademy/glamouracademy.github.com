@@ -4,7 +4,7 @@
   <title><![CDATA[Sippin' on Syntactic Sugar]]></title>
   <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
   <link href="http://glamouracademy.github.io/"/>
-  <updated>2014-11-06T14:41:40-05:00</updated>
+  <updated>2014-12-04T16:11:53-05:00</updated>
   <id>http://glamouracademy.github.io/</id>
   <author>
     <name><![CDATA[Charlotte Chang]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Subtracting Arrays on a Thursday]]></title>
+    <link href="http://glamouracademy.github.io/blog/2014/12/04/subtracting-arrays-on-a-thursday/"/>
+    <updated>2014-12-04T16:02:00-05:00</updated>
+    <id>http://glamouracademy.github.io/blog/2014/12/04/subtracting-arrays-on-a-thursday</id>
+    <content type="html"><![CDATA[<p>Just a little Thursday afternoon note about subtracting arrays that was discovered doing <a href="http://rosalind.info/problems/hamm/">the hamming test</a>, which detects the number of differences between two different DNA strands.</p>
+
+<p>Let’s say you had to two DNA strands:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>strand1 = [G,G,A,C,G]
+</span><span class='line'>strand2 = [G,G,T,C,G]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you subtracted <code>strand1</code> from <code>strand2</code>, you’d expect the difference to be <code>1</code>, right?  In fact, it is <code>1</code>.</p>
+
+<p>Let’s take another example of another two DNA strands:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>strand3 = [A,G,A]
+</span><span class='line'>strand4 = [A,G,G]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you subtracted <code>strand3</code> from <code>strand4</code>, you’d expect the difference to be <code>1</code>, right?  There is 1 letter different between the two strands.</p>
+
+<p>However what you get is <code>0</code>.</p>
+
+<p>It seems that the <code>-</code> operator checks for uniques rather than checking in place.</p>
+
+<p>Happy Thursday!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Ruby Date Class: a Brief Lesson Learned]]></title>
