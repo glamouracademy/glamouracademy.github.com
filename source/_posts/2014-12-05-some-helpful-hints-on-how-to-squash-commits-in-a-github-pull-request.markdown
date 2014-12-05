@@ -35,7 +35,7 @@ Confirm that you’ve added the remote: `git remote -v`.
 	```
 Note: if you're not super experienced with git, you might be wondering about 'origin', 'master', 'upstream'.  Here's a just little image that hopefully will help:
 
-<img src="images/git.png"/>
+<img src="/images/git.png"/>
 
 
 Now you can follow Klabnik’s post:
@@ -48,7 +48,7 @@ Now you can follow Klabnik’s post:
 
 At this stage, you’ll get the opportunity to view the commits you had made previously. 
 
-<img src="images/editcommits.png"/>
+<img src="/images/editcommits.png"/>
 <small>Note: this image is after I had squashed so you only see one commit; but, you can get an idea of what you'd see in vim</small>
 
 Add an `s` or `squash` to the commits that you want to squash. For me, I added an `s` to the commit after the first commit.  The word `pick` prepends the commit info.  So delete the word `pick` from the second commit and add `s` in it’s place. You now get the option to edit the commit message.
