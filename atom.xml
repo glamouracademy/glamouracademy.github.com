@@ -4,7 +4,7 @@
   <title><![CDATA[Sippin' on Syntactic Sugar]]></title>
   <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
   <link href="http://glamouracademy.github.io/"/>
-  <updated>2014-12-05T12:23:38-05:00</updated>
+  <updated>2014-12-05T12:31:46-05:00</updated>
   <id>http://glamouracademy.github.io/</id>
   <author>
     <name><![CDATA[Charlotte Chang]]></name>
@@ -51,7 +51,7 @@ upstream git@github:projectrepourl.git (push)
 
 <p>Note: if you&rsquo;re not super experienced with git, you might be wondering about &lsquo;origin&rsquo;, &lsquo;master&rsquo;, &lsquo;upstream&rsquo;.  Here&rsquo;s a just little image that hopefully will help:</p>
 
-<p><img src="images/git.png"/></p>
+<p><img src="http://glamouracademy.github.io/images/git.png"/></p>
 
 <p>Now you can follow Klabnik’s post:</p>
 
@@ -65,7 +65,7 @@ $ git rebase -i upstream/master
 
 <p>At this stage, you’ll get the opportunity to view the commits you had made previously.</p>
 
-<p><img src="images/editcommits.png"/>
+<p><img src="http://glamouracademy.github.io/images/editcommits.png"/>
 <small>Note: this image is after I had squashed so you only see one commit; but, you can get an idea of what you&rsquo;d see in vim</small></p>
 
 <p>Add an <code>s</code> or <code>squash</code> to the commits that you want to squash. For me, I added an <code>s</code> to the commit after the first commit.  The word <code>pick</code> prepends the commit info.  So delete the word <code>pick</code> from the second commit and add <code>s</code> in it’s place. You now get the option to edit the commit message.</p>
