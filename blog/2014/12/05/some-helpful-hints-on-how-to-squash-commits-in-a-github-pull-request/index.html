@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Variable Scope: How I Learned to Stop Worrying and Love the Ruling Class - Sippin' on Syntactic Sugar</title>
+  <title>Some Helpful Hints on How to Squash Commits in a Github Pull Request - Sippin' on Syntactic Sugar</title>
   <meta name="author" content="Charlotte Chang">
 
   
-  <meta name="description" content=" ">
+  <meta name="description" content="Let&rsquo;s say you want to submit a pull request but you&rsquo;ve committed more than once and let&rsquo;s say that also you&rsquo;re not satisfied &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://glamouracademy.github.io/blog/2013/10/16/variable-scope-how-i-learned-to-stop-worrying-and-love-the-ruling-class">
+  <link rel="canonical" href="http://glamouracademy.github.io/blog/2014/12/05/some-helpful-hints-on-how-to-squash-commits-in-a-github-pull-request">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Sippin' on Syntactic Sugar" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Variable Scope: How I Learned to Stop Worrying and Love the Ruling Class</h1>
+      <h1 class="entry-title">Some Helpful Hints on How to Squash Commits in a Github Pull Request</h1>
     
     
       <p class="meta">
@@ -96,15 +96,67 @@
   
 
 
-<time datetime="2013-10-16T23:58:00-04:00" pubdate data-updated="true">Oct 16<span>th</span>, 2013</time>
+<time datetime="2014-12-05T11:59:00-05:00" pubdate data-updated="true">Dec 5<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><iframe src="https://docs.google.com/presentation/d/10uozglFTF_Exk8w8AWa1nHI3cLjWv1lcHIVKua7C8-g/embed?start=false&loop=false&delayms=5000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<div class="entry-content"><p>Let&rsquo;s say you want to submit a pull request but you&rsquo;ve committed more than once and let&rsquo;s say that also you&rsquo;re not satisfied with the commit message you originally used.  Let&rsquo;s say you might be feeling like this:</p>
 
+<p><img src="http://1.bp.blogspot.com/-AZNV9I1nBF4/UB6SvKtIR6I/AAAAAAAAAWY/fk8_oWh9JCI/s1600/midvale+school+for+the+gifted.jpg"/></p>
+
+<p>There&rsquo;s a great post by Steve Klabnik: <a href:"http://blog.steveklabnik.com/posts/2012-11-08-how-to-squash-commits-in-a-github-pull-request">How to Squash Commits in a github pull request</a></p>
+
+<p>There were a couple of things that I needed to know in order to follow Klabnik’s helpful post.</p>
+
+<p>First, find out what remotes are set up: <code>git remote -v</code>.</p>
+
+<pre><code>```
+origin git@github.com:youraccount/repo.git (fetch)
+origin git@github.com:youraccount/repo.git (push)
+
+```
+</code></pre>
+
+<p>In this case I didn&rsquo;t have upstream set up.</p>
+
+<p>So, add upstream: <code>git remote add upstream git@github:projectrepourl.git</code>  (You can get this url by navigating to the project’s repo and copying the clone URL.)
+Confirm that you’ve added the remote: <code>git remote -v</code>.</p>
+
+<pre><code>```
+origin git@github.com:youraccount/repo.git (fetch)
+origin git@github.com:youraccount/repo.git (push)
+upstream git@github:projectrepourl.git (fetch)
+upstream git@github:projectrepourl.git (push)
+
+```
+</code></pre>
+
+<p>Note: if you&rsquo;re not super experienced with git, you might be wondering about &lsquo;origin&rsquo;, &lsquo;master&rsquo;, &lsquo;upstream&rsquo;.  Here&rsquo;s a just little image that hopefully will help:</p>
+
+<p><img src="images/git.png"/></p>
+
+<p>Now you can follow Klabnik’s post:</p>
+
+<pre><code>```
+$ git fetch upstream
+$ git checkout master
+$ git rebase -i upstream/master
+
+```
+</code></pre>
+
+<p>At this stage, you’ll get the opportunity to view the commits you had made previously.</p>
+
+<p><img src="images/editcommits.png"/>
+<small>Note: this image is after I had squashed so you only see one commit; but, you can get an idea of what you&rsquo;d see in vim</small></p>
+
+<p>Add an <code>s</code> or <code>squash</code> to the commits that you want to squash. For me, I added an <code>s</code> to the commit after the first commit.  The word <code>pick</code> prepends the commit info.  So delete the word <code>pick</code> from the second commit and add <code>s</code> in it’s place. You now get the option to edit the commit message.</p>
+
+<p>Finally, as Klabnik says: <code>$ git pull origin master -f</code>
+If you go back to github, you’ll see that your commits have changed to the squashed number of commits. (For me I squashed two commits to one.)</p>
 </div>
 
 
@@ -127,7 +179,7 @@
   
 
 
-<time datetime="2013-10-16T23:58:00-04:00" pubdate data-updated="true">Oct 16<span>th</span>, 2013</time>
+<time datetime="2014-12-05T11:59:00-05:00" pubdate data-updated="true">Dec 5<span>th</span>, 2014</time>
       
 
 
@@ -135,7 +187,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2013/10/16/variable-scope-how-i-learned-to-stop-worrying-and-love-the-ruling-class/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2013/10/16/variable-scope-how-i-learned-to-stop-worrying-and-love-the-ruling-class/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2014/12/05/some-helpful-hints-on-how-to-squash-commits-in-a-github-pull-request/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2014/12/05/some-helpful-hints-on-how-to-squash-commits-in-a-github-pull-request/" >Tweet</a>
   
   
   
@@ -144,10 +196,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/27/yes-and/" title="Previous Post: Yes And">&laquo; Yes And</a>
+        <a class="basic-alignment left" href="/blog/2014/12/04/subtracting-arrays-on-a-thursday/" title="Previous Post: Subtracting Arrays on a Thursday">&laquo; Subtracting Arrays on a Thursday</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/11/04/gem-dot-first/" title="Next Post: gem.first">gem.first &raquo;</a>
       
     </p>
   </footer>
