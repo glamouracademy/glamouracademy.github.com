@@ -48,7 +48,7 @@ Now you can follow Klabnik’s post:
 
 At this stage, you’ll get the opportunity to view the commits you had made previously. 
 
-<img src="../images/editcommits.png"/>
+<img src="/images/editcommits.png"/>
 <small>Note: this image is after I had squashed so you only see one commit; but, you can get an idea of what you'd see in vim</small>
 
 Add an `s` or `squash` to the commits that you want to squash. For me, I added an `s` to the commit after the first commit.  The word `pick` prepends the commit info.  So delete the word `pick` from the second commit and add `s` in it’s place. You now get the option to edit the commit message.
