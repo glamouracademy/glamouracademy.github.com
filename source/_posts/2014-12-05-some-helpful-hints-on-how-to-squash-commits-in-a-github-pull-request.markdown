@@ -35,7 +35,7 @@ Confirm that you’ve added the remote: `git remote -v`.
 	```
 Note: if you're not super experienced with git, you might be wondering about 'origin', 'master', 'upstream'.  Here's a just little image that hopefully will help:
 
-<img src="../images/git.png"/>
+<img src="/images/git.png"/>
 
 
 Now you can follow Klabnik’s post:
