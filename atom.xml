@@ -4,7 +4,7 @@
   <title><![CDATA[Sippin' on Syntactic Sugar]]></title>
   <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
   <link href="http://glamouracademy.github.io/"/>
-  <updated>2014-12-05T12:33:34-05:00</updated>
+  <updated>2014-12-10T10:18:41-05:00</updated>
   <id>http://glamouracademy.github.io/</id>
   <author>
     <name><![CDATA[Charlotte Chang]]></name>
@@ -51,7 +51,7 @@ upstream git@github:projectrepourl.git (push)
 
 <p>Note: if you&rsquo;re not super experienced with git, you might be wondering about &lsquo;origin&rsquo;, &lsquo;master&rsquo;, &lsquo;upstream&rsquo;.  Here&rsquo;s a just little image that hopefully will help:</p>
 
-<p><img src="../images/git.png"/></p>
+<p><img src="http://glamouracademy.github.io/images/git.png"/></p>
 
 <p>Now you can follow Klabnik’s post:</p>
 
