@@ -4,7 +4,7 @@
   <title><![CDATA[Sippin' on Syntactic Sugar]]></title>
   <link href="http://glamouracademy.github.io/atom.xml" rel="self"/>
   <link href="http://glamouracademy.github.io/"/>
-  <updated>2014-12-10T10:45:47-05:00</updated>
+  <updated>2015-02-12T10:39:27-05:00</updated>
   <id>http://glamouracademy.github.io/</id>
   <author>
     <name><![CDATA[Charlotte Chang]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Bulk Delete Files in Git in 5 Steps]]></title>
+    <link href="http://glamouracademy.github.io/blog/2015/02/12/how-to-bulk-delete-files-in-git-in-5-steps/"/>
+    <updated>2015-02-12T10:20:00-05:00</updated>
+    <id>http://glamouracademy.github.io/blog/2015/02/12/how-to-bulk-delete-files-in-git-in-5-steps</id>
+    <content type="html"><![CDATA[<p>You might be familiar with <code>rm -rf</code> and if you are, you probably also were warned to be <em>very careful</em>. So I’m pretty cautious about deletions for fear of accidentally deleting directories. Generally I’m not deleting a lot of files, so a simple <code>git rm /path/to/file</code> will suit just fine.  However if you find yourself in a situation where you’re trying to bulk delete files, deleting each file is quite tedious.</p>
+
+<p>You also might have noticed that when you do a <code>git add .</code> only the staged, modified files get added and you get the following message: &ldquo;(use &#8220;git add/rm &lt;file>&hellip;&rdquo; to update what will be committed)&#8221;</p>
+
+<p>So here’s how you bulk delete files:</p>
+
+<ol>
+<li><p>See what is actually staged via <code>git status</code> (btw this is generally a good practice). I’m assuming that your deleted files are “not staged for commit”.</p></li>
+<li><p>Stage your deleted files &ndash; <code>git add -u</code></p></li>
+<li><p>Confirm that your deleted files are staged &ndash; <code>git status</code></p></li>
+<li><p>Commit your now staged deleted files &ndash; <code>git commit -m "your_message"</code></p></li>
+<li><p>Push your commit like normal &ndash; <code>git push</code></p></li>
+</ol>
+
+
+<p>For more info, <a href="http://stackoverflow.com/questions/1786692/bulk-delete-in-git">this</a> stackoverflow is also helpful! And many thanks to <a href="https://twitter.com/joelbyler">@joelbyler</a> for patiently walking me through it!</p>
+
+<p>Hope everyone is staying warm this winter!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Some Helpful Hints on How to Squash Commits in a Github Pull Request]]></title>
