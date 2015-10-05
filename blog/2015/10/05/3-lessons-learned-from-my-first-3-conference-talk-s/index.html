@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Some Helpful Hints on How to Squash Commits in a Github Pull Request - Sippin' on Syntactic Sugar</title>
+  <title>3 Lessons Learned from my First (3) Conference Talk(s) - Sippin' on Syntactic Sugar</title>
   <meta name="author" content="Charlotte Chang">
 
   
-  <meta name="description" content="Let&rsquo;s say you want to submit a pull request but you&rsquo;ve committed more than once and let&rsquo;s say that also you&rsquo;re not satisfied &hellip;">
+  <meta name="description" content="One of my 2015 professional goals to speak at conferences. I set out to the task, reached out to the local community, and got accepted to speak three &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://glamouracademy.github.io/blog/2014/12/05/some-helpful-hints-on-how-to-squash-commits-in-a-github-pull-request">
+  <link rel="canonical" href="http://glamouracademy.github.io/blog/2015/10/05/3-lessons-learned-from-my-first-3-conference-talk-s">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Sippin' on Syntactic Sugar" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Some Helpful Hints on How to Squash Commits in a Github Pull Request</h1>
+      <h1 class="entry-title">3 Lessons Learned From My First (3) Conference Talk(s)</h1>
     
     
       <p class="meta">
@@ -96,67 +96,52 @@
   
 
 
-<time datetime="2014-12-05T11:59:00-05:00" pubdate data-updated="true">Dec 5<span>th</span>, 2014</time>
+<time datetime="2015-10-05T17:43:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Let&rsquo;s say you want to submit a pull request but you&rsquo;ve committed more than once and let&rsquo;s say that also you&rsquo;re not satisfied with the commit message you originally used.  Let&rsquo;s say you might be feeling like this:</p>
+<div class="entry-content"><p>One of my 2015 professional goals to speak at conferences. I set out to the task, reached out to the local community, and got accepted to speak three times in one day! (Three talks in one day was somewhat accidental and I’d recommend a presentation load of less than 3 as a first time public speaking experience.) That day was this past Saturday. I somehow survived this with the lack of sleep, not missing any work and with the support of my co-workers, the community, my parents and dog trainer! (Best dog trainer in the Cleveland: <a href="www.darwindogs.org">Darwin Dogs</a>)</p>
 
-<p><img src="http://1.bp.blogspot.com/-AZNV9I1nBF4/UB6SvKtIR6I/AAAAAAAAAWY/fk8_oWh9JCI/s1600/midvale+school+for+the+gifted.jpg"/></p>
+<p>How’d I do? Well, no one got up and left any of my presentations, I haven’t received any trolling, and people wanted to ask questions afterward, so I’ll take this as a success! There’s definitely room for improvement and I’m really glad to have had the experience of speaking in public. Here are 3 lessons learned:</p>
 
-<p>There&rsquo;s a great post by Steve Klabnik: <a href:"http://blog.steveklabnik.com/posts/2012-11-08-how-to-squash-commits-in-a-github-pull-request">How to Squash Commits in a github pull request</a></p>
+<h3>1. Dry run. A lot.</h3>
 
-<p>There were a couple of things that I needed to know in order to follow Klabnik’s helpful post.</p>
 
-<p>First, find out what remotes are set up: <code>git remote -v</code>.</p>
+<p>The presentation that was farthest along got more run-throughs with people &ndash; 1x with a peer and at a Ruby meetup group. Practicing the presentation helped tremendously.</p>
 
-<pre><code>```
-origin git@github.com:youraccount/repo.git (fetch)
-origin git@github.com:youraccount/repo.git (push)
+<h4>a. Flow.</h4>
 
-```
-</code></pre>
 
-<p>In this case I didn&rsquo;t have upstream set up.</p>
+<p> My presentations use a lot of anecdotes and examples to help illustrate the concepts of Agile software development. Dry running allowed me to test whether those anecdotes and examples were distracting or in support the points I was trying to make. It also helped me practice the transitions between concepts.</p>
 
-<p>So, add upstream: <code>git remote add upstream git@github:projectrepourl.git</code>  (You can get this url by navigating to the project’s repo and copying the clone URL.)
-Confirm that you’ve added the remote: <code>git remote -v</code>.</p>
+<h4>b. Memory.</h4>
 
-<pre><code>```
-origin git@github.com:youraccount/repo.git (fetch)
-origin git@github.com:youraccount/repo.git (push)
-upstream git@github:projectrepourl.git (fetch)
-upstream git@github:projectrepourl.git (push)
 
-```
-</code></pre>
+<p> I knew the some topics of the presentation better than others. And interestingly, even with topics I knew fairly well, like referencing personal experience, I found it harder to recall during the actual presentation. Doing dry runs definitely commits the presentation to memory, making the actual presentation easier. On a sidenote, I found using speaker notes to be distracting.</p>
 
-<p>Note: if you&rsquo;re not super experienced with git, you might be wondering about &lsquo;origin&rsquo;, &lsquo;master&rsquo;, &lsquo;upstream&rsquo;.  Here&rsquo;s a just little image that hopefully will help:</p>
+<h4>c. Speaking in front of people.</h4>
 
-<p><img src="/images/git.png"/></p>
 
-<p>Now you can follow Klabnik’s post:</p>
+<p> It’s within my nature to people please. This holds true with public speaking. Being able to continue speaking while sensing the audience is a hard, yet valuable skill. (An audience can be a distracting thing!) Additionally, taking in that audience feedback (e.g. facial expression, body position) allowed me to adjust my delivery &ndash; speed up, slow down, go into more detail, add more/less humor &ndash; as needed. Practice definitely helps and gauge expected, and unexpected, responses.</p>
 
-<pre><code>```
-$ git fetch upstream
-$ git checkout master
-$ git rebase -i upstream/master
+<h3>2. Know the presentation room AV tech.</h3>
 
-```
-</code></pre>
 
-<p>At this stage, you’ll get the opportunity to view the commits you had made previously.</p>
+<p></p>
 
-<p><img src="/images/editcommits.png"/>
-<small>Note: this image is after I had squashed so you only see one commit; but, you can get an idea of what you&rsquo;d see in vim</small></p>
+<p>I brought three different types of dongles with me, which proved valuable (as I needed them). One of the conference talks was at a university, where the room had a built in AV system. I was caught off-guard with getting my computer set up with an unfamiliar AV system, especially one where plugging my laptop resulted in my screen being displayed on a huge lecture hall screen. Next time, I’ll definitely ask the conference organizer if I can test prior to the day starting.</p>
 
-<p>Add an <code>s</code> or <code>squash</code> to the commits that you want to squash. For me, I added an <code>s</code> to the commit after the first commit.  The word <code>pick</code> prepends the commit info.  So delete the word <code>pick</code> from the second commit and add <code>s</code> in it’s place. You now get the option to edit the commit message.</p>
+<h3>3. Save some energy for post-talk questions.</h3>
 
-<p>Finally, as Klabnik says: <code>$ git pull origin master -f</code>
-If you go back to github, you’ll see that your commits have changed to the squashed number of commits. (For me I squashed two commits to one.)</p>
+
+<p></p>
+
+<p>After listening to conference talks, I am usually energized and inspired. I was surprised how tired I was <em>after</em> speaking. People wanted to chat after the talks, which is a good thing. But especially being an introvert, I found having to respond thoughtfully to statements like “I’m not sure what to do with my life”, pretty challenging. I’ve now realize that some questions deserve more time and I can pass along my contact info where hopefully there can be a more meaningful exchange.</p>
+
+<p>Even though three talks in one days was a bit much, I&rsquo;m glad that I had the experience. I&rsquo;m thankful for the opportunity to do so with <a href="www.wecancode.org">We Can Code It</a> and <a href="http://acm.case.edu/acm/conference/2015">Case Western Reserve University&rsquo;s Link-State Conference</a>. I definitely have a better sense of how to prepare and I’m looking forward to my next talk , which as of now is for <a href="http://codemash.org/">CodeMash 2016</a>, where I’ll be presenting “Software Development Lessons from Industrial Failures of the 1980s.&#8221;</p>
 </div>
 
 
@@ -179,7 +164,7 @@ If you go back to github, you’ll see that your commits have changed to the squ
   
 
 
-<time datetime="2014-12-05T11:59:00-05:00" pubdate data-updated="true">Dec 5<span>th</span>, 2014</time>
+<time datetime="2015-10-05T17:43:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2015</time>
       
 
 
@@ -187,7 +172,7 @@ If you go back to github, you’ll see that your commits have changed to the squ
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2014/12/05/some-helpful-hints-on-how-to-squash-commits-in-a-github-pull-request/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2014/12/05/some-helpful-hints-on-how-to-squash-commits-in-a-github-pull-request/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2015/10/05/3-lessons-learned-from-my-first-3-conference-talk-s/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2015/10/05/3-lessons-learned-from-my-first-3-conference-talk-s/" >Tweet</a>
   
   
   
@@ -196,10 +181,8 @@ If you go back to github, you’ll see that your commits have changed to the squ
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/12/04/subtracting-arrays-on-a-thursday/" title="Previous Post: Subtracting Arrays on a Thursday">&laquo; Subtracting Arrays on a Thursday</a>
+        <a class="basic-alignment left" href="/blog/2015/02/12/how-to-bulk-delete-files-in-git-in-5-steps/" title="Previous Post: How to Bulk Delete Files in Git in 5 Steps">&laquo; How to Bulk Delete Files in Git in 5 Steps</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/02/12/how-to-bulk-delete-files-in-git-in-5-steps/" title="Next Post: How to Bulk Delete Files in Git in 5 Steps">How to Bulk Delete Files in Git in 5 Steps &raquo;</a>
       
     </p>
   </footer>
