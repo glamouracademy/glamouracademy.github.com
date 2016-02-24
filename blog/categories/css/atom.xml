@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS | Sippin' on Syntactic Sugar]]></title>
+  <link href="http://glamouracademy.github.io/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://glamouracademy.github.io/"/>
+  <updated>2016-02-24T11:09:08-05:00</updated>
+  <id>http://glamouracademy.github.io/</id>
+  <author>
+    <name><![CDATA[Charlotte Chang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CSS polygons explained]]></title>
+    <link href="http://glamouracademy.github.io/blog/2016/02/24/css-polygons-explained/"/>
+    <updated>2016-02-24T09:14:00-05:00</updated>
+    <id>http://glamouracademy.github.io/blog/2016/02/24/css-polygons-explained</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been recently diving into front end development and am discovering the power of CSS and image manipulation. Previously I had known about adjusting the shape of corners was done with <code>border-radius</code> property:</p>
+
+<p><figure></p>
+
+<pre><code>&lt;img src="http://glamouracademy.github.io/images/radius.png" alt="image with rounded corners"&gt;
+&lt;figcaption&gt;`border-radius: 50px;`&lt;/figcaption&gt;
+</code></pre>
+
+<p></figure></p>
+
+<p>Of course this method easily produces those cool circular profile pics that you see all the time:</p>
+
+<p><figure></p>
+
+<pre><code>&lt;img src="http://glamouracademy.github.io/images/profile.png" alt="image with fully rounded corners"&gt;
+&lt;figcaption&gt;`border-radius: 100%;`&lt;/figcaption&gt;
+</code></pre>
+
+<p></figure></p>
+
+<p>But what if you want to create an image with &ldquo;cut corners&rdquo;?</p>
+
+<p><figure></p>
+
+<pre><code>&lt;img src="http://glamouracademy.github.io/images/cut_corners.png" alt="image with cut bottom corners"&gt;
+</code></pre>
+
+<p></figure></p>
+
+<p>I discovered that CSS has an element called <em>polygon</em>. With this you can create all sorts of shapes, like stars, if you wanted. For the task at hand, you can create the cut corner with the following:</p>
+
+<p><figure></p>
+
+<pre><code>&lt;img src="http://glamouracademy.github.io/images/polygon1.png" alt="example of polygon code"&gt;
+</code></pre>
+
+<p></figure></p>
+
+<p>All the values within the &lsquo;polygon&rsquo; could be overwhelming so let&rsquo;s walk through it. Essentially each grouping is a point. So&hellip; <code>polygon(x1 y1, x2 y2, x3 y3, x4 y4, x5 y5, x6 y6);</code>. The image is basically on an x-axis and y-axis where the upper left corner is (0,0) coordinate and bottom right corner is (100%, 100%) coordinate.</p>
+
+<p><figure></p>
+
+<pre><code>&lt;img src="http://glamouracademy.github.io/images/xy.png" alt="x-axis and y-axis diagram" &gt;
+&lt;figcaption&gt;Upper left corner = (0,0). Bottom right corner = (100%, 100%).&lt;/figcaption&gt;
+</code></pre>
+
+<p></figure></p>
+
+<p><figure></p>
+
+<pre><code>&lt;img src="http://glamouracademy.github.io/images/polygon2.png" alt="polygon image with x and y axis overlay"&gt;
+&lt;figcaption&gt;Math is powerful.&lt;/figcaption&gt;
+</code></pre>
+
+<p></figure></p>
+
+<p>I&rsquo;d recommend practicing adjusting the values of the points to get more comfortable. You can use <a href="www.codepen.io">CodePen</a> and here is one that I made:</p>
+
+<p data-height="268" data-theme-id="0" data-slug-hash="MKNRrY" data-default-tab="result" data-user="glamouracademy" class='codepen'>See the Pen <a href='http://codepen.io/glamouracademy/pen/MKNRrY/'>polygon</a> by Charlotte Chang (<a href='http://codepen.io/glamouracademy'>@glamouracademy</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="http://glamouracademy.github.io//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+<p></p>
+
+<p>Also Bennett Feely has a great tool for making clip-paths via CSS called <a href="http://bennettfeely.com/clippy/">Clippy</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

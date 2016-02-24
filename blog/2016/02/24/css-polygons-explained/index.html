@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Ruby Date Class: a Brief Lesson Learned - Sippin' on Syntactic Sugar</title>
+  <title>CSS polygons explained - Sippin' on Syntactic Sugar</title>
   <meta name="author" content="Charlotte Chang">
 
   
-  <meta name="description" content="Why can I use the Ruby `Date` class without requiring date? I was doing an exercism.io exercise, Gigasecond, which required me to address my fear of &hellip;">
+  <meta name="description" content="I&rsquo;ve been recently diving into front end development and am discovering the power of CSS and image manipulation. Previously I had known about &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://glamouracademy.github.io/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned">
+  <link rel="canonical" href="http://glamouracademy.github.io/blog/2016/02/24/css-polygons-explained">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Sippin' on Syntactic Sugar" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">The Ruby Date Class: A Brief Lesson Learned</h1>
+      <h1 class="entry-title">CSS Polygons Explained</h1>
     
     
       <p class="meta">
@@ -96,81 +96,70 @@
   
 
 
-<time datetime="2014-10-31T17:20:00-04:00" pubdate data-updated="true">Oct 31<span>st</span>, 2014</time>
+<time datetime="2016-02-24T09:14:00-05:00" pubdate data-updated="true">Feb 24<span>th</span>, 2016</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h2><em>Why can I use the Ruby `Date` class without requiring date?</em></h2>
+<div class="entry-content"><p>I&rsquo;ve been recently diving into front end development and am discovering the power of CSS and image manipulation. Previously I had known about adjusting the shape of corners was done with <code>border-radius</code> property:</p>
+
+<figure>
+    <img src="/images/radius.png" alt="image with rounded corners">
+    <figcaption>`border-radius: 50px;`</figcaption>
+</figure>
 
 
-<p>I was doing an <a href="http://exercism.io">exercism.io</a> exercise, Gigasecond, which required me to address my fear of <code>date</code> and <code>time</code>.  (You can see <a href="http://exercism.io/submissions/d056c2d12fb6363735f483ca">my submission here and nitpick</a> if you’d like.)</p>
+<p>Of course this method easily produces those cool circular profile pics that you see all the time:</p>
 
-<p>I noticed that I could use <code>date</code> without actually requiring <code>date.</code></p>
-
-<p>I thought to myself, “hmmm, that seems awfully inefficient.  Why should I type <code>require 'date’</code> if I don’t need to?” So this caused an investigation into: Do I actually need to <code>require ‘date’</code>?</p>
-
-<p>My first stop was irb, where I noticed that I would get different results depending on whether or not required date and further if I required date after the fact, the result would change too.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>date = Date.new
-</span><span class='line'>=> #&lt;Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
-</span><span class='line'>
-</span><span class='line'>date.class
-</span><span class='line'>=> Date
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>require ‘Date’
-</span><span class='line'>new_date = Date.new
-</span><span class='line'>=> #&lt;Date: -4712-01-01 ((0j,0s,0n),+0s,2299161j)>
-</span><span class='line'>
-</span><span class='line'>new_date.class
-</span><span class='line'>=> Date
-</span><span class='line'>
-</span><span class='line'>date.class
-</span><span class='line'>=> uninitialized constant error/bug!</span></code></pre></td></tr></table></div></figure>
+<figure>
+    <img src="/images/profile.png" alt="image with fully rounded corners">
+    <figcaption>`border-radius: 100%;`</figcaption>
+</figure>
 
 
-<p>Suspicious.</p>
+<p>But what if you want to create an image with &ldquo;cut corners&rdquo;?</p>
 
-<p>I did the same exercise in <a href="www.repl.it">repl.it</a> and got an uninitialized constant error. I also did the same investigation for <code>Time</code> but there was no inconsistency in the results. So this led me to believe there was some versioning issue or perhaps there really is an bug in irb.</p>
-
-<p>I <a href="http://stackoverflow.com/questions/26639080/why-can-i-use-the-date-class-without-requiring-date">posted on StackOverflow</a> and got some good information.</p>
-
-<p>Basically, it’s <a href="https://github.com/rubygems/rubygems/pull/948">a Rubygems bug for Rubygems versions earlier than 2.4.0</a>!</p>
-
-<p>So, if you run <code>gem environment</code> in terminal you should see what version of ruby gems and ruby you’re running.</p>
-
-<p>Apparently there is an intention to include this Rubygems fix into Ruby 2.2.  So until then, you can <a href="https://rubygems.org/pages/download">update your version of Rubygems</a> by:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rubygems-update
-</span><span class='line'>$ update_rubygems</span></code></pre></td></tr></table></div></figure>
+<figure>
+    <img src="/images/cut_corners.png" alt="image with cut bottom corners">
+</figure>
 
 
-<p>and voila! When you try to create a Date object without requiring date you should now get a uninitialized constant error.</p>
+<p>I discovered that CSS has an element called <em>polygon</em>. With this you can create all sorts of shapes, like stars, if you wanted. For the task at hand, you can create the cut corner with the following:</p>
 
-<p>Happy halloween.</p>
+<figure>
+    <img src="/images/polygon1.png" alt="example of polygon code">
+</figure>
 
-<p><img src="http://thehydrant.files.wordpress.com/2012/09/h22.jpg?w=490"></p>
+
+<p>All the values within the &lsquo;polygon&rsquo; could be overwhelming so let&rsquo;s walk through it. Essentially each grouping is a point. So&hellip; <code>polygon(x1 y1, x2 y2, x3 y3, x4 y4, x5 y5, x6 y6);</code>. The image is basically on an x-axis and y-axis where the upper left corner is (0,0) coordinate and bottom right corner is (100%, 100%) coordinate.</p>
+
+<figure>
+    <img src="/images/xy.png" alt="x-axis and y-axis diagram" >
+    <figcaption>Upper left corner = (0,0). Bottom right corner = (100%, 100%).</figcaption>
+</figure>
+
+
+<p></p>
+
+<figure>
+    <img src="/images/polygon2.png" alt="polygon image with x and y axis overlay">
+    <figcaption>Math is powerful.</figcaption>
+</figure>
+
+
+<p>I&rsquo;d recommend practicing adjusting the values of the points to get more comfortable. You can use <a href="www.codepen.io">CodePen</a> and here is one that I made:</p>
+
+<p data-height="268" data-theme-id="0" data-slug-hash="MKNRrY" data-default-tab="result" data-user="glamouracademy" class='codepen'>See the Pen <a href='http://codepen.io/glamouracademy/pen/MKNRrY/'>polygon</a> by Charlotte Chang (<a href='http://codepen.io/glamouracademy'>@glamouracademy</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+<p></p>
+
+<p>Also Bennett Feely has a great tool for making clip-paths via CSS called <a href="http://bennettfeely.com/clippy/">Clippy</a>.</p>
 </div>
 
 
@@ -193,15 +182,21 @@
   
 
 
-<time datetime="2014-10-31T17:20:00-04:00" pubdate data-updated="true">Oct 31<span>st</span>, 2014</time>
+<time datetime="2016-02-24T09:14:00-05:00" pubdate data-updated="true">Feb 24<span>th</span>, 2016</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2014/10/31/the-ruby-fri-oct-31-17-20-50-edt-2014-class-a-brief-lesson-learned/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://glamouracademy.github.io/blog/2016/02/24/css-polygons-explained/" data-via="pushorpull" data-counturl="http://glamouracademy.github.io/blog/2016/02/24/css-polygons-explained/" >Tweet</a>
   
   
   
@@ -210,10 +205,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/10/17/refactoring-my-5-steps-to-90-percent-less-code/" title="Previous Post: Refactoring: my 5 steps to 90% less code">&laquo; Refactoring: my 5 steps to 90% less code</a>
+        <a class="basic-alignment left" href="/blog/2015/10/05/3-lessons-learned-from-my-first-3-conference-talk-s/" title="Previous Post: 3 Lessons Learned from my First (3) Conference Talk(s)">&laquo; 3 Lessons Learned from my First (3) Conference Talk(s)</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/12/04/subtracting-arrays-on-a-thursday/" title="Next Post: Subtracting Arrays on a Thursday">Subtracting Arrays on a Thursday &raquo;</a>
       
     </p>
   </footer>
